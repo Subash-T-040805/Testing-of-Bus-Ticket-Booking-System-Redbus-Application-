@@ -1,1 +1,54 @@
 
+package testing2;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class youtube {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.youtube.com/");
+		WebElement s1=driver.findElement(By.name("search_query"));
+		s1.sendKeys("tamil songs",Keys.ENTER);
+		Thread.sleep(3000);
+		//driver.findElement(By.xpath("//*[@id=\"thumbnail\"]/yt-image/img")).click();
+		//Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id=\"thumbnail\"]/yt-image/img")).click();
+		Thread.sleep(4000);
+		driver.navigate().back();
+//		Thread.sleep(2000);
+//		driver.findElement(By.className("ytp-miniplayer-close-button")).click();
+		Thread.sleep(3000);
+		driver.navigate().back();
+		s1.clear();
+		driver.findElement(By.xpath("//*[@id=\"guide-content\"]")).click();
+		driver.findElement(By.id("identifierId")).sendKeys("subashkani200@gmail.com",Keys.ENTER);
+		Thread.sleep(5000);
+		driver.navigate().back();
+		Thread.sleep(3000);
+		driver.navigate().back();
+		driver.manage().window().minimize();
+		Thread.sleep(2000);
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//yt-formatted-string[text()='Shorts']")).click();
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath("//*[@id=\"experiment-overlay\"]/ytd-reel-player-overlay-renderer/yt-reel-player-overlay-view-model/div[2]/reel-action-bar-view-model/like-button-view-model/toggle-button-view-model/button-view-model/label")).click();
+		driver.navigate().back();
+		driver.close();
+		
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
